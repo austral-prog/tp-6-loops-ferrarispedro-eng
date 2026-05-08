@@ -12,7 +12,21 @@ def collatz_steps(n):
     Ejemplo: collatz_steps(6) -> 8
       6 -> 3 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1  (8 pasos)
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    counter = 0
+    if n == 1:
+       return counter
+    else:
+       
+      while n != 1:
+        if n % 2 != 0:
+           n = 3 * n + 1 
+           counter += 1
+      
+        elif n % 2 == 0:
+          n = n // 2
+          counter += 1
+      return counter
+        
 
 
 def collatz_sequence(n):
@@ -24,4 +38,22 @@ def collatz_sequence(n):
 
     Ejemplo: collatz_sequence(6) -> [6, 3, 10, 5, 16, 8, 4, 2, 1]
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    lst = []
+
+    if n == 1:
+       return [1]
+   
+    else:
+      lst.append(n)
+      while n != 1:
+       
+       if n % 2 != 0:
+           n = 3 * n + 1 
+           lst.append(n)
+
+       elif n % 2 == 0:
+        n = n // 2
+        lst.append(n)
+
+    return lst
+       

@@ -1,4 +1,3 @@
-# Replace the "ANSWER HERE" for your answer
 
 def put(value, lst):
     """
@@ -12,7 +11,15 @@ def put(value, lst):
         put("Blue", colors) -> 1
         # colors ahora es ["Red", "Blue", "Green"]
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    
+    i = 0
+    for word in lst:
+        if word == "":
+            lst[i] = value
+            return i
+        i += 1
+    return -1
+            
 
 
 def remove(value, lst):
@@ -26,4 +33,9 @@ def remove(value, lst):
         remove("Red", colors) -> 2
         # colors ahora es ["", "Green", "", "Blue"]
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    deleted = 0
+    for i, word in enumerate(lst):
+        if word == value:
+            lst[i] = ""
+            deleted += 1
+    return deleted

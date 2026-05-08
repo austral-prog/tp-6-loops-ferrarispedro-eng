@@ -1,4 +1,3 @@
-# Replace the "ANSWER HERE" for your answer
 
 def index_of(target, lst):
     """
@@ -7,7 +6,18 @@ def index_of(target, lst):
 
     Ejemplo: index_of("Black", ["Red", "Green", "Black"]) -> 2
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    i= 0
+
+    for word in lst:
+        
+        if word != target:
+            i += 1
+        elif word == target:
+            return i
+        
+    else:
+        return -1
+
 
 
 def index_of_by_index(target, lst, start):
@@ -18,7 +28,10 @@ def index_of_by_index(target, lst, start):
 
     Ejemplo: index_of_by_index("Black", ["Red", "Black", "Green", "Black"], 2) -> 3
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    for word in range(start, len(lst)):
+        if lst[word] == target:
+            return word
+    return -1
 
 
 def index_of_empty(lst):
@@ -28,4 +41,15 @@ def index_of_empty(lst):
 
     Ejemplo: index_of_empty(["Red", "", "Green"]) -> 1
     """
-    return "ANSWER HERE"  # Remove this line and implement
+
+    i = 0
+
+    for word in lst:
+        if word != "":
+            i += 1
+
+        elif word == "":
+            return i 
+        
+    else:
+         return -1
